@@ -1,0 +1,22 @@
+<ion-view view-title="Travel Book" ng-controller="ListCtrl">   
+    <ion-content>
+        <ion-list show-reorder="reordering">
+            <ion-item class="item item-thumbnail-left item-remove-animate"  href="#/edit/{{note.Id}}" ng-repeat="note in notes track by note.Id">
+                <img ng-src="{{note.fotos[0]}}">
+                <h2>{{note.title}}</h2>
+				<p>{{note.description}}</p>
+                <p>{{note.date}}</p>		
+                <ion-reorder-button class="ion-drag" on-reorder="move(note, $fromIndex, $toIndex)"></ion-reorder-button>
+                <ion-option-button class="button-assertive icon-left ion-ios-trash"  ng-click="remove(note.Id)">Удалить</ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <div class="bar bar-footer bar-stable">
+            <a href ="#/add" class="button button-icon icon ion-plus">
+            </a>
+            <a href ="#/settings" class="button button-icon icon ion-gear-a">
+            </a>
+            <button class="button button-icon ion-drag" ng-click="toggleReordering()">
+            </button>
+    </div>
+</ion-view>     

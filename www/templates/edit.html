@@ -1,0 +1,41 @@
+<ion-view view-title="{{note.title}}" style="text-align: center;">
+    <div class="list">
+        <ion-content>
+            <div class="item item-input">
+                <input type="text" ng-model="note.title" > </input>
+            </div>
+            <div class="item item-input description" style="height: 100%; display: block;">
+                <textarea class="txt" ng-model="note.description"></textarea>
+            </div> 
+			<div class="row responsive-md" id="mySlider" style="text-align: center;">
+                <img class="col col-25" ng-repeat="fot in note.fotos" ng-src="{{fot}}" style="height: inherit; width: inherit;">
+                <!--<img class="col col-25" ng-repeat="fot in note.images" id="myImage" ng-src="{{fot}}" style="height: inherit; width: inherit;">-->
+			</div>
+        </div>
+        
+    <!--        <ion-pane scroll="false" id="mapview" ng-controller="LocationCtrl">
+				<div id="myError"></div>
+                <div id="map"></div>
+            </ion-pane> -->
+        
+        <div class="footer tabs tabs-icon-only">
+            <a class="tab-item">
+                <i class="icon ion-camera" ng-click="takePicture();"></i> <!-- Кнопка фото -->
+            </a>
+            <a class="tab-item">
+                <i class="icon ion-folder" ng-click="selectPhoto();"></i>  <!-- Кнопка загрузки фото с галереии -->
+            </a>
+            <a class="tab-item">
+                <i class="icon ion-navigate" ng-click="dropdown();"></i>  <!-- Кнопка геолокации -->
+            </a>
+            <a class="tab-item" ng-controller="ShareCtrl">
+                <i class="icon ion-share" ng-click="shareViaTwitter('{{note.description}}', '{{fot}}');"></i>  <!-- Кнопка шаринга -->
+            </a>
+            <a class="tab-item">
+                <i class="icon ion-checkmark" ng-click="save();"></i>  <!-- Кнопка сохранить -->
+            </a>
+            
+        </div>
+
+    </ion-content>
+</ion-view>

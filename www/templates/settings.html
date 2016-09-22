@@ -1,0 +1,14 @@
+<body ng-app="travelbook" view-title="Настройки" ng-controller="FontCtrl">
+    <ion-view view-title="Настройки">   
+        <ion-content>
+            <h4 style="text-align: center;">Шрифты:</h4>
+            <ion-list>
+                <ion-radio ng-model="choice" ng-value="'A'">Стандартный</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'B'">Calibri</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'C'">Times New Roman</ion-radio>
+                <tt>color = {{choice}}</tt><br/>
+          <!--  <h4 style="text-align: center;">Темы:</h4>-->
+            </ion-list>
+        <ion-content>
+    </ion-view>
+</body>
